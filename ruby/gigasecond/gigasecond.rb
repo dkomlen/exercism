@@ -1,5 +1,6 @@
 class Gigasecond
-    def self.from(time)
-        time + 10**9
-    end
+  TIME_DELTA = 10 ** 9
+  def self.from(time)
+    time + TIME_DELTA
+  end
 end
