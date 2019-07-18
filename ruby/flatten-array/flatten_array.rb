@@ -1,13 +1,13 @@
 class FlattenArray
-  def self.flatten(xs)
-    ret = []
-    for x in xs
-      if x.respond_to?("count")
-        ret += flatten(x)
-      elsif x
-        ret += [x]
+  def self.flatten(array)
+    result = []
+    array.each do |item|
+      if item.respond_to?("each")
+        result.concat(flatten(item))
+      elsif !item.nil?
+        result.push(item)
       end
     end
-    return ret
+    result
   end
 end
